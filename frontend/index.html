@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f1">
+  <meta name="description" content="Accede a MiComunidad, para gestionar juntas de propietarios, y EventManager, para organizar actividades, calendario y pagos.">
+  <title>Mis aplicaciones</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #18221f;
+      --muted: #65716b;
+      --paper: #f6f5f1;
+      --card: #fff;
+      --line: #e6e7e1;
+      --green: #126b55;
+      --green-dark: #0d503f;
+      --blue: #3659a6;
+      --blue-dark: #294786;
+      --shadow: 0 20px 55px rgba(28, 42, 36, .08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: radial-gradient(ellipse at 15% 0%, #e4eee6 0, transparent 36rem), var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { width: min(1080px, calc(100% - 40px)); margin: 0 auto; padding: 24px 0 28px; }
+    header { display: flex; width: 100%; justify-content: flex-end; align-items: center; font-size: .82rem; font-weight: 650; letter-spacing: .01em; }
+    .copyright { color: #65716b; text-align: right; }
+    main { padding: 8px 0 68px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 20px; color: var(--green); font-size: .76rem; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 22px; height: 1px; background: currentColor; }
+    h1 { max-width: 760px; margin: 0; font-size: clamp(2.65rem, 6vw, 5.2rem); line-height: .99; letter-spacing: -.065em; font-weight: 730; }
+    .intro { max-width: 620px; margin: 24px 0 0; color: var(--muted); font-size: clamp(1.03rem, 2vw, 1.2rem); line-height: 1.7; }
+    .apps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    .card { display: flex; min-height: 348px; flex-direction: column; padding: 30px; overflow: hidden; background: var(--card); border: 1px solid var(--line); border-radius: 22px; box-shadow: var(--shadow); }
+    .card-top { display: flex; align-items: center; justify-content: space-between; }
+    .icon { display: grid; width: 50px; height: 50px; place-items: center; border-radius: 15px; }
+    .icon svg { width: 50px; height: 50px; }
+    .events .icon svg { width: 30px; height: 30px; }
+    .community .icon { color: var(--green); background: transparent; }
+    .events .icon { color: #fff; background: linear-gradient(135deg, #3b82f6, #0d9488); }
+    .category { color: #88918b; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    h2 { margin: 27px 0 10px; font-size: 1.65rem; letter-spacing: -.04em; }
+    .description { margin: 0; color: var(--muted); line-height: 1.65; font-size: .97rem; }
+    .features { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 26px; padding: 0; list-style: none; }
+    .features li { padding: 7px 10px; color: #52605a; background: #f4f5f2; border-radius: 999px; font-size: .76rem; font-weight: 600; }
+    .action { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; margin-top: auto; padding: 14px 16px; color: #fff; border-radius: 11px; text-decoration: none; font-size: .93rem; font-weight: 700; transition: transform .16s ease, background .16s ease; }
+    .community .action { background: var(--green); }
+    .community .action:hover { background: var(--green-dark); }
+    .events .action { background: var(--blue); }
+    .events .action:hover { background: var(--blue-dark); }
+    .action:hover { transform: translateY(-2px); }
+    .action:focus-visible { outline: 3px solid #d3a62e; outline-offset: 3px; }
+    .arrow { font-size: 1.2rem; line-height: 1; }
+    .note { display: flex; align-items: flex-start; gap: 12px; max-width: 800px; margin: 30px auto 0; padding: 17px 20px; color: #53615a; border: 1px solid #e5e8e1; border-radius: 14px; background: rgba(255,255,255,.58); font-size: .88rem; line-height: 1.6; }
+    .note svg { flex: none; width: 18px; height: 18px; margin-top: 1px; color: var(--green); }
+    footer { display: flex; justify-content: space-between; gap: 16px; padding-top: 22px; color: #89918c; border-top: 1px solid var(--line); font-size: .78rem; }
+    @media (max-width: 700px) {
+      .page { width: min(100% - 28px, 540px); padding-top: 20px; }
+      main { padding: 8px 0 42px; }
+      .apps { grid-template-columns: 1fr; }
+      .card { min-height: 0; padding: 24px; }
+      h2 { margin-top: 22px; }
+      footer { flex-direction: column; gap: 5px; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="copyright">© 2026 CristianFG</header>
+
+    <main>
+      <p class="eyebrow">Un espacio, dos herramientas</p>
+      <h1>Todo más fácil,<br>desde el primer clic.</h1>
+      <p class="intro">Gestiona las reuniones de tu comunidad o mantén tus actividades al día. Elige una aplicación para empezar.</p>
+
+      <section class="apps" aria-label="Aplicaciones disponibles">
+        <article class="card community">
+          <div class="card-top">
+            <span class="icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="community-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3b82f6"/><stop offset="1" stop-color="#0d9488"/></linearGradient></defs><rect width="48" height="48" rx="12" fill="url(#community-gradient)"/><path fill="#fff" d="M13 38V13a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2v7h3a2 2 0 0 1 2 2v16h2v2H11v-2z"/><g fill="#2b8fb8"><rect x="17" y="15" width="3" height="3"/><rect x="23" y="15" width="3" height="3"/><rect x="17" y="21" width="3" height="3"/><rect x="23" y="21" width="3" height="3"/><rect x="17" y="27" width="3" height="3"/><rect x="23" y="27" width="3" height="3"/><rect x="32" y="25" width="3" height="3"/><rect x="32" y="31" width="3" height="3"/><rect x="19.5" y="33" width="6" height="5"/></g></svg>
+            </span>
+            <span class="category">Comunidades</span>
+          </div>
+          <h2>MiComunidad</h2>
+          <p class="description">Prepara juntas de propietarios, registra asistentes y votos, y consulta en tiempo real si se aprueba cada acuerdo según el sistema de cómputo elegido.</p>
+          <ul class="features" aria-label="Características">
+            <li>Juntas y votaciones</li><li>Criterios del Código Civil de Cataluña</li><li>Funciona sin conexión</li>
+          </ul>
+          <a class="action" href="MiComunidad_BetaVo.html"><span>Abrir MiComunidad</span><span class="arrow" aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="card events">
+          <div class="card-top">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="30" height="30" fill="#fff" fill-rule="evenodd" aria-hidden="true"><path d="M6 4V3h2v1h8V3h2v1h1a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h1ZM6 10h3v3H6ZM10.5 10h3v3h-3ZM15 10h3v3h-3ZM6 14.5h3v3H6ZM10.5 14.5h3v3h-3Z"/></svg>
+            </span>
+            <span class="category">Actividades</span>
+          </div>
+          <h2>EventManager</h2>
+          <p class="description">Organiza cursos, servicios, gimnasio y otras actividades. Crea el calendario una vez, ajusta los cambios y lleva el control de lo que haces, cobras y pagas.</p>
+          <ul class="features" aria-label="Características">
+            <li>Calendario automático</li><li>Seguimiento de tareas</li><li>Control de cobros y pagos</li>
+          </ul>
+          <a class="action" href="EventManager_BetaVo.html"><span>Abrir EventManager</span><span class="arrow" aria-hidden="true">↗</span></a>
+        </article>
+      </section>
+
+      <aside class="note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 1 1 8 0v3M12 14v3"/></svg>
+        <span><strong>Tu información, en tu dispositivo.</strong> Ambas aplicaciones guardan los datos en el navegador y funcionan sin conexión a internet; no necesitan cuentas ni envían información a terceros.</span>
+      </aside>
+    </main>
+
+    <footer>
+      <span>Aplicaciones para una organización más sencilla.</span>
+      <span>Selecciona una tarjeta para acceder.</span>
+    </footer>
+  </div>
+</body>
+</html>
+
+
+
+
+
