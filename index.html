@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f6f5f1">
-  <meta name="description" content="Accede a MiComunidad, para gestionar juntas de propietarios, y EventManager, para organizar actividades, calendario y pagos.">
+  <meta name="description" content="Accede a MiComunidad para gestionar juntas, EventManager para organizar actividades y MiEconomia para controlar gastos.">
   <title>Mis aplicaciones</title>
   <style>
     :root {
@@ -18,6 +18,8 @@
       --green-dark: #0d503f;
       --blue: #3659a6;
       --blue-dark: #294786;
+      --teal: #16877f;
+      --teal-dark: #116c65;
       --shadow: 0 20px 55px rgba(28, 42, 36, .08);
     }
     * { box-sizing: border-box; }
@@ -37,7 +39,7 @@
     .eyebrow::before { content: ""; width: 22px; height: 1px; background: currentColor; }
     h1 { max-width: 760px; margin: 0; font-size: clamp(2.65rem, 6vw, 5.2rem); line-height: .99; letter-spacing: -.065em; font-weight: 730; }
     .intro { max-width: 620px; margin: 24px 0 0; color: var(--muted); font-size: clamp(1.03rem, 2vw, 1.2rem); line-height: 1.7; }
-    .apps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    .apps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
     .card { display: flex; min-height: 348px; flex-direction: column; padding: 30px; overflow: hidden; background: var(--card); border: 1px solid var(--line); border-radius: 22px; box-shadow: var(--shadow); }
     .card-top { display: flex; align-items: center; justify-content: space-between; }
     .icon { display: grid; width: 50px; height: 50px; place-items: center; border-radius: 15px; }
@@ -61,6 +63,10 @@
     .note { display: flex; align-items: flex-start; gap: 12px; max-width: 800px; margin: 30px auto 0; padding: 17px 20px; color: #53615a; border: 1px solid #e5e8e1; border-radius: 14px; background: rgba(255,255,255,.58); font-size: .88rem; line-height: 1.6; }
     .note svg { flex: none; width: 18px; height: 18px; margin-top: 1px; color: var(--green); }
     footer { display: flex; justify-content: space-between; gap: 16px; padding-top: 22px; color: #89918c; border-top: 1px solid var(--line); font-size: .78rem; }
+    .economy .icon { background: transparent; }
+    .economy .action { background: var(--teal); }
+    .economy .action:hover { background: var(--teal-dark); }
+    @media (max-width: 900px) { .apps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
     @media (max-width: 700px) {
       .page { width: min(100% - 28px, 540px); padding-top: 20px; }
       main { padding: 8px 0 42px; }
@@ -77,9 +83,9 @@
     <header class="copyright">© 2026 CristianFG</header>
 
     <main>
-      <p class="eyebrow">Un espacio, dos herramientas</p>
+      <p class="eyebrow">Un espacio, tres herramientas</p>
       <h1>Todo más fácil,<br>desde el primer clic.</h1>
-      <p class="intro">Gestiona las reuniones de tu comunidad o mantén tus actividades al día. Elige una aplicación para empezar.</p>
+      <p class="intro">Organiza tu comunidad, tus actividades y tus gastos desde un solo lugar. Elige una aplicación para empezar.</p>
 
       <section class="apps" aria-label="Aplicaciones disponibles">
         <article class="card community">
@@ -111,11 +117,25 @@
           </ul>
           <a class="action" href="./docs/eventmanager/EventManager_Demo_Vo.html"><span>Abrir EventManager</span><span class="arrow" aria-hidden="true">↗</span></a>
         </article>
+        <article class="card economy">
+          <div class="card-top">
+            <span class="icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="economy-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3193c2"/><stop offset="1" stop-color="#147f6d"/></linearGradient></defs><rect x="5" y="2" width="38" height="44" rx="12" fill="url(#economy-gradient)"/><path fill="#fff" d="M11 22.5 24 11l13 11.5h-3V37H14V22.5z"/><circle cx="24" cy="24" r="5.5" fill="#147f6d"/><path fill="#fff" d="M22 29h4v8h-4z"/><circle cx="24" cy="24" r="1.2" fill="#fff"/></svg>
+            </span>
+            <span class="category">Finanzas personales</span>
+          </div>
+          <h2>MiEconomia</h2>
+          <p class="description">Anota cada gasto en segundos y descubre en qué se va tu dinero. Clasifica los pagos por categoría para identificar dónde puedes ahorrar.</p>
+          <ul class="features" aria-label="Características">
+            <li>Registro rápido de gastos</li><li>Resumen por categorías</li><li>Datos en tu navegador</li>
+          </ul>
+          <a class="action" href="./docs/mieconomia/MiEconomia_Vo.html"><span>Abrir MiEconomia</span><span class="arrow" aria-hidden="true">↗</span></a>
+        </article>
       </section>
 
       <aside class="note">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 1 1 8 0v3M12 14v3"/></svg>
-        <span><strong>Tu información, en tu dispositivo.</strong> Ambas aplicaciones guardan los datos en el navegador y funcionan sin conexión a internet; no necesitan cuentas ni envían información a terceros.</span>
+        <span><strong>Tu información, en tu dispositivo.</strong> MiEconomia guarda tus datos solo en este navegador.</span>
       </aside>
     </main>
 
@@ -126,6 +146,10 @@
   </div>
 </body>
 </html>
+
+
+
+
 
 
 
