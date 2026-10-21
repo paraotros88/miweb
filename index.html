@@ -10,7 +10,7 @@
     :root {
       color-scheme: light;
       --ink: #18221f;
-      --muted: #65716b;
+      --muted: #4c5953;
       --paper: #f6f5f1;
       --card: #fff;
       --line: #e6e7e1;
@@ -39,33 +39,34 @@
     .eyebrow::before { content: ""; width: 22px; height: 1px; background: currentColor; }
     h1 { max-width: 760px; margin: 0; font-size: clamp(2.65rem, 6vw, 5.2rem); line-height: .99; letter-spacing: -.065em; font-weight: 730; }
     .intro { max-width: 620px; margin: 24px 0 0; color: var(--muted); font-size: clamp(1.03rem, 2vw, 1.2rem); line-height: 1.7; }
-    .apps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+    .apps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-top: 30px; }
     .card { display: flex; min-height: 348px; flex-direction: column; padding: 30px; overflow: hidden; background: var(--card); border: 1px solid var(--line); border-radius: 22px; box-shadow: var(--shadow); }
     .card-top { display: flex; align-items: center; justify-content: space-between; }
-    .icon { display: grid; width: 50px; height: 50px; place-items: center; border-radius: 15px; }
-    .icon svg { width: 50px; height: 50px; }
-    .events .icon svg { width: 30px; height: 30px; }
-    .community .icon { color: var(--green); background: transparent; }
-    .events .icon { color: #fff; background: linear-gradient(135deg, #3b82f6, #0d9488); }
-    .category { color: #88918b; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    .icon { display: grid; flex: 0 0 50px; width: 50px; height: 50px; place-items: center; overflow: hidden; border-radius: 15px; }
+    .icon svg { width: 30px; height: 30px; }
+    .community .icon svg { width: 42px; height: 42px; }
+    .economy .icon svg { width: 34px; height: 34px; }
+    .community .icon { color: #3e2a16; background: #f4b66b; }
+    .events .icon { color: #fff; background: #2563eb; }
+    .category { color: #5e6963; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
     h2 { margin: 27px 0 10px; font-size: 1.65rem; letter-spacing: -.04em; }
     .description { margin: 0; color: var(--muted); line-height: 1.65; font-size: .97rem; }
     .features { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 26px; padding: 0; list-style: none; }
     .features li { padding: 7px 10px; color: #52605a; background: #f4f5f2; border-radius: 999px; font-size: .76rem; font-weight: 600; }
-    .action { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; margin-top: auto; padding: 14px 16px; color: #fff; border-radius: 11px; text-decoration: none; font-size: .93rem; font-weight: 700; transition: transform .16s ease, background .16s ease; }
-    .community .action { background: var(--green); }
-    .community .action:hover { background: var(--green-dark); }
-    .events .action { background: var(--blue); }
-    .events .action:hover { background: var(--blue-dark); }
-    .action:hover { transform: translateY(-2px); }
+    .action { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; margin-top: auto; padding: 14px 16px; color: #fff; border-radius: 11px; text-decoration: none; font-size: .93rem; font-weight: 700; transition: transform .16s ease, background .16s ease, box-shadow .16s ease; }
+    .community .action { color: #3e2a16; background: #f4b66b; }
+    .community .action:hover { background: #c66b16; }
+    .events .action { background: #2563eb; }
+    .events .action:hover { background: #123b9c; }
+    .action:hover { transform: translateY(-2px); outline: 2px solid #18221f; outline-offset: 2px; }
     .action:focus-visible { outline: 3px solid #d3a62e; outline-offset: 3px; }
     .arrow { font-size: 1.2rem; line-height: 1; }
-    .note { display: flex; align-items: flex-start; gap: 12px; max-width: 800px; margin: 30px auto 0; padding: 17px 20px; color: #53615a; border: 1px solid #e5e8e1; border-radius: 14px; background: rgba(255,255,255,.58); font-size: .88rem; line-height: 1.6; }
-    .note svg { flex: none; width: 18px; height: 18px; margin-top: 1px; color: var(--green); }
-    footer { display: flex; justify-content: space-between; gap: 16px; padding-top: 22px; color: #89918c; border-top: 1px solid var(--line); font-size: .78rem; }
-    .economy .icon { background: transparent; }
+    .note { display: flex; align-items: center; justify-content: center; gap: 12px; text-align: center; max-width: 800px; margin: 30px auto 0; padding: 17px 20px; color: #53615a; border: 1px solid #e5e8e1; border-radius: 14px; background: #fff; font-size: .88rem; line-height: 1.6; }
+    .note svg { flex: none; width: 18px; height: 18px; margin-top: 0; color: var(--green); }
+    footer { display: flex; justify-content: space-between; gap: 16px; padding-top: 22px; color: #5e6963; border-top: 1px solid var(--line); font-size: .78rem; }
+    .economy .icon { color: #fff; background: var(--teal); }
     .economy .action { background: var(--teal); }
-    .economy .action:hover { background: var(--teal-dark); }
+    .economy .action:hover { background: #07554f; }
     @media (max-width: 900px) { .apps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
     @media (max-width: 700px) {
       .page { width: min(100% - 28px, 540px); padding-top: 20px; }
@@ -91,7 +92,7 @@
         <article class="card community">
           <div class="card-top">
             <span class="icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="community-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3b82f6"/><stop offset="1" stop-color="#0d9488"/></linearGradient></defs><rect width="48" height="48" rx="12" fill="url(#community-gradient)"/><path fill="#fff" d="M13 38V13a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2v7h3a2 2 0 0 1 2 2v16h2v2H11v-2z"/><g fill="#2b8fb8"><rect x="17" y="15" width="3" height="3"/><rect x="23" y="15" width="3" height="3"/><rect x="17" y="21" width="3" height="3"/><rect x="23" y="21" width="3" height="3"/><rect x="17" y="27" width="3" height="3"/><rect x="23" y="27" width="3" height="3"/><rect x="32" y="25" width="3" height="3"/><rect x="32" y="31" width="3" height="3"/><rect x="19.5" y="33" width="6" height="5"/></g></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" aria-hidden="true"><path fill="#3e2a16" d="M13 38V13a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2v7h3a2 2 0 0 1 2 2v16h2v2H11v-2z"/><g fill="#fff"><rect x="17" y="15" width="3" height="3"/><rect x="23" y="15" width="3" height="3"/><rect x="17" y="21" width="3" height="3"/><rect x="23" y="21" width="3" height="3"/><rect x="17" y="27" width="3" height="3"/><rect x="23" y="27" width="3" height="3"/><rect x="32" y="25" width="3" height="3"/><rect x="32" y="31" width="3" height="3"/><rect x="19.5" y="33" width="6" height="5"/></g></svg>
             </span>
             <span class="category">Comunidades</span>
           </div>
@@ -120,7 +121,7 @@
         <article class="card economy">
           <div class="card-top">
             <span class="icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="economy-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3193c2"/><stop offset="1" stop-color="#147f6d"/></linearGradient></defs><rect x="5" y="2" width="38" height="44" rx="12" fill="url(#economy-gradient)"/><path fill="#fff" d="M11 22.5 24 11l13 11.5h-3V37H14V22.5z"/><circle cx="24" cy="24" r="5.5" fill="#147f6d"/><path fill="#fff" d="M22 29h4v8h-4z"/><circle cx="24" cy="24" r="1.2" fill="#fff"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" fill-rule="evenodd" d="M12 2.8 2 11.2h2.6v9.4h14.8v-9.4H22zM12 10.4a4.2 4.2 0 1 0 0 8.4 4.2 4.2 0 1 0 0-8.4z"/><text x="12" y="17.25" fill="#fff" font-family="Arial, sans-serif" font-size="7.2" font-weight="700" text-anchor="middle">€</text></svg>
             </span>
             <span class="category">Finanzas personales</span>
           </div>
@@ -146,6 +147,14 @@
   </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 
