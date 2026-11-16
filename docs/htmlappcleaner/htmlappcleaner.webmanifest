@@ -1,0 +1,16 @@
+{
+  "id": "./HtmlAppCleaner.html",
+  "name": "HtmlAppCleaner",
+  "short_name": "AppCleaner",
+  "description": "Explora, respalda y limpia los datos locales de tus aplicaciones web.",
+  "lang": "es",
+  "start_url": "./HtmlAppCleaner.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#fcf5f9",
+  "theme_color": "#fcf5f9",
+  "icons": [
+    { "src": "./icons/htmlappcleaner.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
