@@ -6,8 +6,8 @@
     <path d="M147 112h118M147 150h94" fill="none" stroke-width="17"/>
     <path d="M48 194h106l34 34h115q18 0 18 18v164q0 20-20 20H48q-20 0-20-20V214q0-20 20-20Z" stroke-width="20"/>
     <!-- A clear upright broom/brush with a wide head and separated bristles -->
-    <path d="M405 106v175" fill="none" stroke-width="25"/>
-    <path d="M346 294v-12q0-43 43-43h32q43 0 43 43v12z" stroke-width="19"/>
-    <path d="M346 294h118M360 299q0 38-8 67m30-66q0 39-4 68m27-68v69m27-69q0 39 4 68m22-69q0 38 8 67" fill="none" stroke-width="13"/>
+    <path d="m414 96-39 169" fill="none" stroke-width="25"/>
+    <path d="M327 300q9-43 49-56 17-6 37-2l23 5q41 9 50 48 3 12 0 26l-5 22-158-34z" stroke-width="19"/>
+    <path d="m328 319 154 33m-140-29q-3 24-13 54m42-48q-2 27-8 58m36-52q-1 27-2 59m29-52q2 26 4 58m25-51q7 24 15 53" fill="none" stroke-width="13"/>
   </g>
 </svg>
