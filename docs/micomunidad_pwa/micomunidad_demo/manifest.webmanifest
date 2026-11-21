@@ -1,0 +1,38 @@
+{
+  "id": "MiComunidad_Demo.html",
+  "name": "MiComunidad - DEMO",
+  "short_name": "MiComunidad DEMO",
+  "description": "Versión DEMO de MiComunidad: reuniones y votaciones de la comunidad de propietarios",
+  "lang": "es",
+  "start_url": "MiComunidad_Demo.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fbf5ec",
+  "theme_color": "#fff3e0",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
