@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f6f5f1">
-  <meta name="description" content="Accede a MiComunidad para gestionar juntas, EventManager para organizar actividades y MiEconomia para controlar gastos.">
+  <meta name="description" content="Accede a MiComunidad para gestionar juntas, MiEconomia para controlar gastos, MiGestorDeEventos para organizar actividades y HtmlAppCleaner para gestionar datos de aplicaciones.">
   <title>Mis aplicaciones</title>
   <style>
     :root {
@@ -86,7 +86,7 @@
     <main>
       <p class="eyebrow">Un espacio, múltiples herramientas</p>
       <h1>Todo más fácil,<br>desde el primer clic.</h1>
-      <p class="intro">Organiza tu comunidad, tus actividades y tus gastos desde un solo lugar. Elige una aplicación para empezar.</p>
+      <p class="intro">Organiza tu comunidad, tus gastos y tus actividades de forma sencilla y profesional. Elige una aplicación para empezar.</p>
 
       <section class="apps" aria-label="Aplicaciones disponibles">
         <article class="card community">
@@ -101,23 +101,9 @@
           <ul class="features" aria-label="Características">
             <li>Juntas y votaciones</li><li>Criterios del Código Civil de Cataluña</li><li>Funciona sin conexión</li>
           </ul>
-          <a class="action" href="./docs/micomunidad/MiComunidad_Demo_Vo.html" target="MiComunidad"><span>Abrir MiComunidad</span><span class="arrow" aria-hidden="true">↗</span></a>
+          <a class="action" href="./docs/micomunidad_pwa/micomunidad_demo/MiComunidad_Demo.html" target="MiComunidad"><span>Abrir MiComunidad</span><span class="arrow" aria-hidden="true">↗</span></a>
         </article>
 
-        <article class="card events">
-          <div class="card-top">
-            <span class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="30" height="30" fill="#fff" fill-rule="evenodd" aria-hidden="true"><path d="M6 4V3h2v1h8V3h2v1h1a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h1ZM6 10h3v3H6ZM10.5 10h3v3h-3ZM15 10h3v3h-3ZM6 14.5h3v3H6ZM10.5 14.5h3v3h-3Z"/></svg>
-            </span>
-            <span class="category">Actividades</span>
-          </div>
-          <h2>EventManager</h2>
-          <p class="description">Organiza cursos, servicios, gimnasio y otras actividades. Crea el calendario una vez, ajusta los cambios y lleva el control de lo que haces, cobras y pagas.</p>
-          <ul class="features" aria-label="Características">
-            <li>Calendario automático</li><li>Seguimiento de tareas</li><li>Control de cobros y pagos</li>
-          </ul>
-          <a class="action" href="./docs/eventmanager/EventManager_Demo_Vo.html" target="EventManager"><span>Abrir EventManager</span><span class="arrow" aria-hidden="true">↗</span></a>
-        </article>
         <article class="card economy">
           <div class="card-top">
             <span class="icon" aria-hidden="true">
@@ -130,12 +116,28 @@
           <ul class="features" aria-label="Características">
             <li>Registro rápido de gastos</li><li>Resumen por categorías</li><li>Asistente para reducir gastos</li>
           </ul>
-          <a class="action" href="./docs/mieconomia/MiEconomia_Demo_Vo.html" target="MiEconomia"><span>Abrir MiEconomia</span><span class="arrow" aria-hidden="true">↗</span></a>
+          <a class="action" href="./docs/mieconomia_pwa/mieconomia_demo/MiEconomia_Demo.html" target="MiEconomia"><span>Abrir MiEconomia</span><span class="arrow" aria-hidden="true">↗</span></a>
         </article>
+
+        <article class="card events">
+          <div class="card-top">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="30" height="30" fill="#fff" fill-rule="evenodd" aria-hidden="true"><path d="M6 4V3h2v1h8V3h2v1h1a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h1ZM6 10h3v3H6ZM10.5 10h3v3h-3ZM15 10h3v3h-3ZM6 14.5h3v3H6ZM10.5 14.5h3v3h-3Z"/></svg>
+            </span>
+            <span class="category">Actividades</span>
+          </div>
+          <h2>MiGestorDeEventos</h2>
+          <p class="description">Organiza cursos, servicios, gimnasio y otras actividades. Crea el calendario una vez, ajusta los cambios y lleva el control de lo que haces, cobras y pagas.</p>
+          <ul class="features" aria-label="Características">
+            <li>Calendario automático</li><li>Seguimiento de tareas</li><li>Control de cobros y pagos</li>
+          </ul>
+          <a class="action" href="./docs/migestordeeventos_pwa/migestordeeventos_demo/MiGestorDeEventos_Demo.html" target="MiGestorDeEventos"><span>Abrir MiGestorDeEventos</span><span class="arrow" aria-hidden="true">↗</span></a>
+        </article>
+
         <article class="card" style="--green:#a91d67">
           <div class="card-top">
             <span class="icon" style="color:#a91d67;background:#f8d9eb" aria-hidden="true">
-              <img src="./docs/htmlappcleaner/icons/htmlappcleaner.svg" alt="" style="display:block;width:50px;height:50px">
+              <img src="./docs/htmlappcleaner_pwa/icons/htmlappcleaner.svg?v=8" alt="" style="display:block;width:50px;height:50px">
             </span>
             <span class="category">Utilidad</span>
           </div>
@@ -144,7 +146,7 @@
           <ul class="features" aria-label="Características">
             <li>Explorador de datos</li><li>Copias de seguridad</li><li>Limpieza selectiva</li>
           </ul>
-          <a class="action" style="background:#a91d67" href="./docs/htmlappcleaner/HtmlAppCleaner.html"><span>Abrir HtmlAppCleaner</span><span class="arrow" aria-hidden="true">↗</span></a>
+          <a class="action" style="background:#a91d67" href="./docs/htmlappcleaner_pwa/HtmlAppCleaner.html" target="HtmlAppCleaner"><span>Abrir HtmlAppCleaner</span><span class="arrow" aria-hidden="true">↗</span></a>
         </article>
       </section>
 
@@ -161,6 +163,12 @@
   </div>
 </body>
 </html>
+
+
+
+
+
+
 
 
 
