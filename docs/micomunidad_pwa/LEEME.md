@@ -1,6 +1,6 @@
 # MiComunidad · versión instalable (PWA)
 
-© 2026 CristianFG · Todos los derechos reservados · Versión 20 Nov 2026
+© 2026 CristianFG · Todos los derechos reservados · Versión 21 Nov 2026
 
 Dos aplicaciones **independientes** (no comparten ningún fichero). Cada carpeta lleva todo lo suyo:
 
