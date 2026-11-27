@@ -3,7 +3,7 @@
    Estrategia: red primero (con 4 s de espera) y, si falla, lo guardado. Así las actualizaciones llegan solas.
    Se salta la caché HTTP del navegador (GitHub Pages la guarda unos 10 min) tanto al guardar como al pedir ficheros.
    El nombre de la caché lleva la versión: se renueva en cada cambio publicado. */
-const CACHE='mieconomia-demo-25Nov2026-b';
+const CACHE='mieconomia-demo-26Nov2026';
 const FICHEROS=['MiEconomia_Demo.html','css/styles.css','js/config.js','js/app.js','manifest.webmanifest','icons/icon.svg','icons/icon-192.png','icons/icon-512.png','icons/icon-maskable-512.png','icons/apple-touch-icon.png'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FICHEROS.map(u=>new Request(u,{cache:'reload'})))).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k.startsWith('mieconomia-demo-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
